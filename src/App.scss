@@ -1,0 +1,19 @@
+.container {
+  max-width: 120rem; /*this property set the width 120rem if there is enough space if there isn't the width becomes 100%*/
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-2);
+  box-shadow: var(--shadow-dark);
+
+  min-height: 50rem;
+
+  .content {
+    display: flex;
+  }
+
+  .hotel-view {
+    flex: 1; //flex-grow 1
+  //Test
+    background-color: orangered;
+    height: 60rem;
+  }
+}

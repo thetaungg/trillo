@@ -1,0 +1,75 @@
+.sidebar {
+  background-color: var(--color-grey-dark-1);
+  flex: 0 0 18%;//flex-grow 0, flex-shrink 0 flex-basis 18%
+  display: flex;
+  flex-direction: column; //because we want to use justify-content
+  justify-content: space-between;
+
+  .side-nav {
+    font-size: 1.4rem;
+    list-style: none;
+    margin-top: 3.5rem;
+
+
+    &__item {
+      position: relative;//pseudo elements are child of normal element
+
+      &:not(:last-child) {
+        margin-bottom: .5rem;
+      }
+    }
+
+    &__item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 3px;
+      background-color: var(--color-primary);
+      transform: scaleY(0);
+      //transform-origin: top; the width will start growing from the top when the transition occurs
+      transition: transform .2s,//specifying delays to each properties
+      width .4s cubic-bezier(1,0,0,1) .2s, //the last one is the delay before the transition starts //basically the second transition will have to wait .2s after the first one finished
+      background-color .1s; //cubic-bezier is for the second transition
+
+    }
+
+    &__item:hover::before,
+    &__item--active::before{
+      transform: scaleY(1);
+      width: 100%;
+    }
+
+    &__item:active::before {
+      background-color: var(--color-primary-light);
+
+    }
+
+    &__link:link,
+    &__link:visited {
+      color: var(--color-grey-light-1);
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 1.5rem 3rem;
+      display: flex;
+      align-items: center;
+      position: relative; //z-index needs position to be specified
+      z-index: 10;
+    }
+
+    &__icon {
+      width: 1.75rem;
+      height: 1.75rem;
+      margin-right: 2rem;
+      fill: currentColor; //text color of current parent element
+    }
+  }
+
+  .legal {
+    font-size: 1.2rem;
+    color: var(--color-grey-light-4);
+    text-align: center;
+    padding: 2.5rem;
+  }
+}
