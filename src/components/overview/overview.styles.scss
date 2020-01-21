@@ -1,0 +1,57 @@
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-grey-light-2);
+
+  &__heading {
+    font-size: 2.25rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.5rem 3rem; //but setting this only here because of align-items center , all the other elements will appear to have the same padding to and bottom i mean
+  }
+
+  &__stars {
+    //flex: 1; //so that stars and heading close together while the others are furthest but stars element growing bigger isn't ideal
+    margin-right: auto; //we do this //which is the same visually
+    display: flex; //making all the stars block element to remove white spaces at the bottom
+  }
+  &__icon-star,
+  &__icon-location{
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary);
+  }
+  &__location {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon-location {
+    margin-right: .5rem;
+  }
+
+  &__rating {
+    background-color:  var(--color-primary);
+    margin-left: 3rem;
+    color: white;
+    align-self: stretch;
+    padding: 0 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__rating-average {
+    font-size: 2.25rem;
+    font-weight: 300;
+    margin-bottom: -3px;
+  }
+
+  &__rating-count {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+}

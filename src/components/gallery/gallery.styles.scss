@@ -1,0 +1,13 @@
+.gallery {
+  display: flex;
+
+  &__item {
+
+  }
+
+  &__photo {
+    width: 100%;
+    display: block; //this is to avoid small space under img if we leave them as inline element
+
+  }
+}
