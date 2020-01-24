@@ -1,3 +1,4 @@
+@import "./assets/scss/variables";
 .container {
   max-width: 120rem; /*this property set the width 120rem if there is enough space if there isn't the width becomes 100%*/
   margin: 8rem auto;
@@ -6,8 +7,18 @@
 
   min-height: 50rem;
 
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
   .content {
     display: flex;
+    
+    @media only screen and (max-width: $bp-medium) {
+      flex-direction: column;
+    }
   }
 
   .hotel-view {

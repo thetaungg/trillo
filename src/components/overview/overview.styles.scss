@@ -1,3 +1,5 @@
+@import "../../assets/scss/variables";
+
 .overview {
   display: flex;
   align-items: center;
@@ -9,6 +11,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem; //but setting this only here because of align-items center , all the other elements will appear to have the same padding to and bottom i mean
+   
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
 
   &__stars {
@@ -42,16 +49,28 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    @media only screen and (max-width: $bp-medium) {
+      padding: 0 1.5rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -3px;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
     font-size: 1rem;
     text-transform: uppercase;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: .5rem;
+    }
   }
 }

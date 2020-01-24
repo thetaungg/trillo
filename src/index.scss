@@ -1,12 +1,5 @@
-/*
-COLORS
+@import "./assets/scss/variables";
 
-Primary: #eb2f64
-Primary light: #FF3366
-Primary dark: #BA265D
-
-
-*/
 :root { /* declaring css variable, root is like html but with higher specificity// we declare them like this because we want them to be available to all elements*/
   --color-primary: #eb2f64; /*this is like custom properties*/
   --color-primary-light: #FF3366;
@@ -34,6 +27,10 @@ Primary dark: #BA265D
 html {
   box-sizing: border-box;
   font-size: 62.5%; /*10px*/
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%; //8px
+  }
 }
 *,
 *::before,

@@ -1,3 +1,4 @@
+@import "../../assets/scss/variables";
 .detail {
   font-size: 1.4rem;
   display: flex;
@@ -5,12 +6,31 @@
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line);
 
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3rem;
+  }
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
+
   .description {
     background-color: #fff;
     flex: 0 0 60%; //the third property is flex-basis which is a width inside the flexbox
     margin-right: 4.5rem;
     box-shadow: var(--shadow-light);
     padding: 3rem;
+
+
+    @media only screen and (max-width: $bp-medium) {
+      padding: 2rem;
+      margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+      margin-bottom: 3rem;
+    }
   }
   .user-review {
     flex: 1; //flex-grow 1
@@ -45,15 +65,21 @@
       width: 1rem;
       margin-right: .7rem;
       //for older browsers
-      //background-image: url("../../assets/icons/SVG/chevron-right.svg");
-      //background-size: cover;
+      background-image: url("../../assets/icons/SVG/chevron-right.svg");
+      background-size: cover;
 
       //newer browsers - masks
-      background-color: var(--color-primary);
-      -webkit-mask-image: url("../../assets/icons/SVG/chevron-right.svg");
-      -webkit-mask-size: cover; //it's just like clip-path //mask-size is like background-size
-      mask-image: url("../../assets/icons/SVG/chevron-right.svg");
-      mask-size: cover;
+      @supports (-webkit-mask-image: url("../../assets/icons/SVG/chevron-right.svg")) or
+                (mask-image: url("../../assets/icons/SVG/chevron-right.svg")) {
+
+        background-color: var(--color-primary);
+        -webkit-mask-image: url("../../assets/icons/SVG/chevron-right.svg");
+        -webkit-mask-size: cover; //it's just like clip-path //mask-size is like background-size
+        mask-image: url("../../assets/icons/SVG/chevron-right.svg");
+        mask-size: cover;
+
+        background-image: none;
+      }
     }
   }
   .recommend {
@@ -66,7 +92,7 @@
       margin-right: auto; //we can also use justify-content
     }
     &__friends {
-
+      display: flex; //for images to be side by side always //for responsive
     }
     &__photo {
       box-sizing: content-box; //we don't want border to take our content space // because our border is big with box-sizing img become smaller
@@ -76,7 +102,7 @@
       border: 3px solid #fff;
 
       &:not(:last-child) {
-        margin-right: -1.5rem; //to make images overlap
+        margin-right: -2rem; //to make images overlap
       }
     }
   }

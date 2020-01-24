@@ -1,3 +1,4 @@
+@import "../../assets/scss/variables";
 .header {
   height: 7rem;
   background-color: #fff;
@@ -7,6 +8,12 @@
   align-items: center;
   font-size: 1.4rem;
 
+  @media only screen and (max-width: $bp-smallest) {
+    flex-wrap: wrap;
+    height: 11rem;
+    align-content: space-around;
+  }
+
   .logo {
     height: 3.25rem;
     margin-left: 2rem;
@@ -14,6 +21,12 @@
 
   .search { //this property is independent of searchbox component ,so, we'll set it here
     flex: 0 0 40%;
+
+    @media only screen and (max-width: $bp-smallest) {
+      order: 1;
+      flex: 0 0 100%;
+      background-color: var(--color-grey-light-2);
+    }
   }
 
   .user-nav {
