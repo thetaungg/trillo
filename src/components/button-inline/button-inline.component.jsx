@@ -1,9 +1,9 @@
 import React from "react";
 import './button-inline.styles.scss';
 
-const ButtonInline = ({content}) => (
+const ButtonInline = ({children}) => (
     <button className="btn-inline">
-        {content}
+        {children}
     </button>
 );
 

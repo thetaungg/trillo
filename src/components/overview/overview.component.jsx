@@ -17,7 +17,7 @@ const Overview = () => (
         </div>
         <div className="overview__location">
             <SvgIcon iconId='icon-location-pin' additionalClassName='overview__icon-location'/>
-            <ButtonInline content='Albufeira, Portugal'/>
+            <ButtonInline>Albufeira, Portugal</ButtonInline>
         </div>
         <div className="overview__rating">
             <div className="overview__rating-average">8.6</div>

@@ -1,3 +1,4 @@
+@import "../../assets/scss/animation";
 .btn-inline {
   border: none;
   color: var(--color-primary);
@@ -8,26 +9,20 @@
   cursor: pointer;
   transition: all .2s;
 
+  span { //if there is
+    margin-left: 3px;
+    transition: margin-left .2s;
+  }
+
   &:hover {
-    color: var(--color-grey-dark-1)
+    color: var(--color-grey-dark-1);
+
+    span {
+      margin-left: 8px;
+    }
   }
   &:focus {
     outline: none;
-    animation: pulsate 1s infinite; //infinite animation when clicked
-  }
-}
-
-@keyframes pulsate {
-  0% {
-    transform: scale(1);
-    box-shadow: none;
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 1rem 4rem rgba(black, 0.25);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: none;
+    @include infinitePulsateAnimation;
   }
 }
