@@ -7,7 +7,12 @@ import Overview from "./components/overview/overview.component";
 import DetailSection from "./components/section-detail/section-detail.component";
 import CTA from "./components/cta/cta.component";
 
+import ReactGA from 'react-ga'; //package for google analytics in react
+
+
 function App() {
+    ReactGA.initialize('UA-157015392-5'); //adding google analytics
+    ReactGA.pageview(window.location.pathname + window.location.search); //this tracks all the pages that user visits in this website
   return (
     <div className="App container">
       <Header/>
